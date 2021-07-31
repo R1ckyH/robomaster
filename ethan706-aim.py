@@ -1,4 +1,4 @@
-error_y = 0.08
+y_add = 0.08
 zoom = 1
 
 list_marker = RmList()
@@ -14,7 +14,7 @@ def function(func):
 def calc():
 
     # var
-    global y_error
+    global y_add
     global list_marker
     global list_shoot
 
@@ -22,7 +22,7 @@ def calc():
     for i in range(5):
         list_shoot[list_marker[i * 5 + 2] - 11] = [
             (list_marker[i * 5 + 3] - 0.5) * 105,
-            (0.5 - list_marker[i * 5 + 4] + y_error) * 54
+            (0.5 - list_marker[i * 5 + 4] + y_add) * 54
         ]
 
 
@@ -61,7 +61,7 @@ def start():
                 gun_ctrl.fire_once()
                 gun_ctrl.stop()
                 time.sleep(0.05)
-            gimbal_ctrl.angle_ctrl(0,0)
+            gimbal_ctrl.angle_ctrl(0,20)
             time.sleep(0.15)
             print("[ OK ] Fire")
 
